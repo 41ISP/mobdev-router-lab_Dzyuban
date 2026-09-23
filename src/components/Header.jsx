@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-inport { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const [query, setQuery] = useState('');
@@ -10,24 +10,16 @@ export default function Header() {
   }
 
   return (
-    <nav className="main-nav">
-  <NavLink to="/" end className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}>
-    Главная
-  </NavLink>
-  <NavLink to="/catalog" className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}>
-    Каталог
-  </NavLink>
-</nav>
+      
     <header className="header">
       <div className="header-inner">
         <a href="/" className="logo">
           <span className="logo-icon">▶</span>
           <span>MovieBox</span>
-        </a>
-
+        </a>        
         <nav className="nav">
-          <a href="/" className="nav-item">Главная</a>
-          <a href="/movies" className="nav-item">Фильмы</a>
+          <NavLink  to="/" end className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}>Главная</NavLink >
+          <NavLink  to="/catalog" end className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}>Фильмы</NavLink >
           <a href="/about" className="nav-item">О проекте</a>
         </nav>
 
